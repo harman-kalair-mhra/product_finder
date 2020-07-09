@@ -19,3 +19,5 @@ function inputHandler(answer) {
 }
 
 rl.question("Please enter your Medical Licence Number: ", inputHandler);
+
+module.exports = inputHandler;

@@ -6,11 +6,12 @@
   "scripts": {
     "dev": "nodemon",
     "start": "node src/index.js",
-    "test": "node src/tests/index.test.js"
+    "test": "jest src/tests/index.test.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "jest": "^26.1.0",
     "mocha": "^8.0.1"
   }
 }
