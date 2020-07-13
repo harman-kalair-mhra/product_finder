@@ -11,7 +11,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "jest": "^26.1.0",
     "mocha": "^8.0.1"
+  },
+  "devDependencies": {
+    "jest": "^26.1.0"
   }
 }

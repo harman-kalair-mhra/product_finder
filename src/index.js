@@ -13,8 +13,10 @@ function inputHandler(answer) {
   let result = itemNames.includes(answer);
   if (result) {
     console.log("Your Licence number has been found " + answer);
+    return true;
   } else {
     console.log("Incorrect number");
+    return false;
   }
 }
 
