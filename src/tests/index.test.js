@@ -1,5 +1,5 @@
 let inputHandler = require("../index.js");
-const { interfaces } = require("mocha");
+const { interfaces } = require("jest");
 
 describe("Product finder", function () {
   test("Test to check User input matches the Licence numbers- return true", function () {
