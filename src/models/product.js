@@ -18,6 +18,9 @@ URL: ${this.url}
 `
     );
   }
+  toString() {
+    return;
+  }
 }
 
 module.exports = Product;

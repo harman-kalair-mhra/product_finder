@@ -1,5 +1,6 @@
 let readline = require("readline");
 const Product = require("./models/product.js");
+const { get } = require("http");
 let rl = readline.createInterface(process.stdin, process.stdout);
 
 let itemNames = ["PL123456", "PL513872", "PL999999", "PL654321", "PL818181"];
@@ -13,7 +14,7 @@ let products = [product1, product2, product3, product4, product5];
 let productObjects = {};
 for (let i = 0; i < products.length; i++) {
   let Product = products[i];
-  productObjects[Product.plNumber] = Product;
+  productObjects[Product.plNumber] = Product; // key and value, key being the Pl number and value = product1 etc.
 }
 
 //let productfound = productObjects["PL123456"];
@@ -26,8 +27,8 @@ function getProduct(product) {
 function inputHandler(answer) {
   let result = getProduct(answer);
   if (result) {
-    console.log("Your Licence number has been found " + answer);
-    return true;
+    console.log(result);
+    //return true;
   } else {
     console.log("Incorrect number");
     return false;
@@ -36,4 +37,4 @@ function inputHandler(answer) {
 
 rl.question("Please enter your Medical Licence Number: ", inputHandler);
 
-exports.isProductPresent = isProductPresent;
+exports.getProduct = getProduct;
