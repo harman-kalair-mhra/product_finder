@@ -27,8 +27,7 @@ function getProduct(product) {
 function inputHandler(answer) {
   let result = getProduct(answer);
   if (result) {
-    console.log(result);
-    //return true;
+    console.log(result.toString());
   } else {
     console.log("Incorrect number");
     return false;

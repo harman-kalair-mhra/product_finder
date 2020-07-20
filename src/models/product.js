@@ -7,7 +7,7 @@ class Product {
     this.url = url;
   }
 
-  describe() {
+  /*describe() {
     console.log(
       `
 PL Number: ${this.plNumber}
@@ -17,9 +17,15 @@ Substance: ${this.substance}
 URL: ${this.url}
 `
     );
-  }
+  } */
   toString() {
-    return;
+    return `
+    PL Number: ${this.plNumber}
+    Name: ${this.name}
+    Dose: ${this.dose}
+    Substance: ${this.substance}
+    URL: ${this.url}
+    `;
   }
 }
 
