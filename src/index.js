@@ -28,6 +28,13 @@ function inputHandler(answer) {
   let result = getProduct(answer);
   if (result) {
     console.log(result.toString());
+    rl.question("Press S to search again or Q to quit", (again) => {
+      if (again === "Q") {
+        rl.close();
+      } else {
+        rl.question("Please enter your Medical Licence Number: ", inputHandler);
+      }
+    });
   } else {
     console.log("Incorrect number");
     return false;
