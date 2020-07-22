@@ -1,12 +1,6 @@
 let readline = require("readline");
-let getProductsData = require("./product-provider");
 let rl = readline.createInterface(process.stdin, process.stdout);
-
-function getProduct(product) {
-  let productObjects = getProductsData();
-  return productObjects[product];
-}
-
+let { getProduct } = require("./product-finder.js");
 function inputHandler(answer) {
   if (answer === "Q") {
     rl.close();
@@ -24,10 +18,10 @@ function inputHandler(answer) {
     inputHandler
   );
 }
-
-rl.question(
-  "Please enter your Medical Licence Number OR press Q to Quit: ",
-  inputHandler
-);
-
-exports.getProduct = getProduct;
+function startUp() {
+  rl.question(
+    "Please enter your Medical Licence Number OR press Q to Quit: ",
+    inputHandler
+  );
+}
+startUp();

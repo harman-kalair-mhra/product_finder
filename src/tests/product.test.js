@@ -21,7 +21,6 @@ Dose: dose
 Substance: substance
 URL: url
 `;
-    product1.describe();
-    expect(console.log.mock.calls[0][0]).toBe(expectresult);
+    expect(product1.toString()).toBe(expectresult);
   });
 });
