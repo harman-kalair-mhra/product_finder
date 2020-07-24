@@ -1,4 +1,4 @@
-let getProductsData = require("./product-provider");
+let getProductsData = require("../repositories/data-provider");
 
 function getProduct(product) {
   let productObjects = getProductsData();

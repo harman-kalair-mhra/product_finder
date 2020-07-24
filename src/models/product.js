@@ -5,6 +5,7 @@ class Product {
     this.dose = dose;
     this.substance = substance;
     this.url = url;
+    this.sensitive_data = "Password/";
   }
 
   toString() {

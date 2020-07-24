@@ -1,7 +1,7 @@
-let { getProduct } = require("../product-finder.js");
-let getProductsData = require("../product-provider.js");
+let { getProduct } = require("../services/finder.js");
+let getProductsData = require("../repositories/data-provider.js");
 
-jest.mock("../product-provider.js"); // mock testing
+jest.mock("../repositories/data-provider"); // mock testing
 
 const Product = require("../models/product.js");
 

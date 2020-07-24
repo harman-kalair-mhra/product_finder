@@ -1,6 +1,6 @@
 let readline = require("readline");
 let rl = readline.createInterface(process.stdin, process.stdout);
-let { getProduct } = require("./product-finder.js");
+let { getProduct } = require("./services/finder.js");
 function inputHandler(answer) {
   if (answer === "Q") {
     rl.close();
