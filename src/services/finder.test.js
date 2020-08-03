@@ -25,7 +25,7 @@ describe("Product finder Test", () => {
     let expected = "Test-name";
     let mockDataSource = setUp(expected);
     let finder = new ProductFinder(mockDataSource);
-    let result = finder.getProduct("PL10001").name;
+    let result = finder.getProduct("PL1000").name;
     expect(result).toBe(expected);
   });
 });
