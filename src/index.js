@@ -1,12 +1,14 @@
 let readline = require("readline");
 let rl = readline.createInterface(process.stdin, process.stdout);
-let { getProduct } = require("./services/finder.js");
-function inputHandler(answer) {
+let ProductFinder = require("./services/finder.js");
+let getData = require("./repositories/data-provider");
+function inputHandler(answer, finder) {
   if (answer === "Q") {
     rl.close();
     return null;
   }
-  let result = getProduct(answer);
+
+  let result = finder.getProduct(answer);
   if (result) {
     console.log(result.toString());
   } else {
@@ -15,13 +17,14 @@ function inputHandler(answer) {
 
   rl.question(
     "Please enter your Medical Licence Number OR press Q to Quit: ",
-    inputHandler
+    inputHandler(finder)
   );
 }
 function startUp() {
+  let finder = new ProductFinder(getData);
   rl.question(
     "Please enter your Medical Licence Number OR press Q to Quit: ",
-    inputHandler
+    inputHandler(finder)
   );
 }
 startUp();

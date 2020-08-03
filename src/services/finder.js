@@ -12,4 +12,4 @@ class ProductFinder {
   }
 }
 
-module.export = ProductFinder;
+module.exports = ProductFinder;
