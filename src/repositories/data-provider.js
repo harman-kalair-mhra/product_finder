@@ -1,5 +1,5 @@
 const Product = require("../models/product.js");
-function getProductsData() {
+function getData() {
   let itemNames = ["PL123456", "PL513872", "PL999999", "PL654321", "PL818181"];
   const product1 = new Product("PL123456", "name", "dose", "substance", "url");
   const product2 = new Product("PL513872", "name", "dose", "substance", "url");
@@ -16,4 +16,4 @@ function getProductsData() {
   return productObjects;
 }
 
-module.exports = getProductsData;
+module.exports = getData;
