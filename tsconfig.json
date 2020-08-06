@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "target": "ES3",
+    "module": "commonjs",
+    "sourceMap": true,
+    "outDir": "./out"
+  },
+  "filesGlob": ["./src_ts/*.ts"]
+}

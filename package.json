@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "dev": "nodemon",
     "start": "node src/index.js",
     "test": "jest"
@@ -15,6 +16,7 @@
     "mocha": "^8.0.1"
   },
   "devDependencies": {
-    "jest": "^26.1.0"
+    "jest": "^26.1.0",
+    "typescript": "^3.9.7"
   }
 }
