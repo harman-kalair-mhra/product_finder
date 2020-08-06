@@ -15,11 +15,9 @@ function inputHandler(answer, finder) {
   }
   getInput(finder);
 }
-function getInput(finder) {
+export default function getInput(finder) {
   rl.question(
     "Please enter your Medical Licence Number OR press Q to Quit: ",
     (answer) => inputHandler(answer, finder)
   );
 }
-
-module.exports = getInput;

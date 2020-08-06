@@ -1,3 +1,5 @@
+"use strict";
+exports.__esModule = true;
 var Product = /** @class */ (function () {
     function Product(plNumber, name, dose, substance, url) {
         this.plNumber = plNumber;
@@ -5,12 +7,11 @@ var Product = /** @class */ (function () {
         this.dose = dose;
         this.substance = substance;
         this.url = url;
-        this.sensitive_data = "Password/";
     }
     Product.prototype.toString = function () {
         return "\nPL Number: " + this.plNumber + "\nName: " + this.name + "\nDose: " + this.dose + "\nSubstance: " + this.substance + "\nURL: " + this.url + "\n";
     };
     return Product;
 }());
-module.exports = Product;
+exports["default"] = Product;
 //# sourceMappingURL=product.js.map

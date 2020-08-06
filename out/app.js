@@ -1,3 +1,5 @@
+"use strict";
+exports.__esModule = true;
 var readline = require("readline");
 var rl = readline.createInterface(process.stdin, process.stdout);
 function inputHandler(answer, finder) {
@@ -17,5 +19,5 @@ function inputHandler(answer, finder) {
 function getInput(finder) {
     rl.question("Please enter your Medical Licence Number OR press Q to Quit: ", function (answer) { return inputHandler(answer, finder); });
 }
-module.exports = getInput;
+exports["default"] = getInput;
 //# sourceMappingURL=app.js.map

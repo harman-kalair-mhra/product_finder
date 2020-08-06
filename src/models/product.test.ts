@@ -1,4 +1,4 @@
-const Product = require("../models/product.js");
+import Product from "../models/product";
 
 describe("Product class test", function () {
   test("classes created", () => {

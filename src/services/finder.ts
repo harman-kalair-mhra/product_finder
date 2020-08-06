@@ -1,7 +1,7 @@
 //exports.getProduct = getProduct; //- when using this surround this with curley brackets during import {}
 //module.exports = getProduct; - exporting a single function
 
-class ProductFinder {
+export default class ProductFinder {
   constructor(dataSource) {
     this.dataSource = dataSource;
   }
@@ -11,5 +11,3 @@ class ProductFinder {
     return productObjects[Product];
   }
 }
-
-module.exports = ProductFinder;

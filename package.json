@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/jest": "^26.0.9",
     "lodash": "^4.17.19",
     "mocha": "^8.0.1"
   },

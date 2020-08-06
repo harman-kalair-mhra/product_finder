@@ -1,5 +1,5 @@
-let ProductFinder = require("./finder.js");
-const Product = require("../models/product.js");
+import ProductFinder from "./finder";
+import Product from "../models/product";
 
 function setUp() {
   let mockProduct = new Product(
