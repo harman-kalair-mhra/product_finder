@@ -1,7 +1,8 @@
-let readline = require("readline");
+import readline = require("readline");
+import ProductFinder from "./services/finder";
 let rl = readline.createInterface(process.stdin, process.stdout);
 
-function inputHandler(answer, finder) {
+function inputHandler(answer: string, finder: ProductFinder): void {
   if (answer === "Q") {
     rl.close();
     return null;
@@ -15,7 +16,7 @@ function inputHandler(answer, finder) {
   }
   getInput(finder);
 }
-export default function getInput(finder) {
+export default function getInput(finder: ProductFinder): void {
   rl.question(
     "Please enter your Medical Licence Number OR press Q to Quit: ",
     (answer) => inputHandler(answer, finder)

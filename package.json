@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "nodemon",
-    "start": "node src/index.js",
+    "start": "node out/index.js",
     "test": "jest"
   },
   "author": "",
@@ -17,7 +17,19 @@
     "mocha": "^8.0.1"
   },
   "devDependencies": {
-    "jest": "^26.1.0",
+    "jest": "^26.3.0",
+    "ts-jest": "^26.1.4",
     "typescript": "^3.9.7"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ]
   }
 }

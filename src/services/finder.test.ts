@@ -1,7 +1,7 @@
 import ProductFinder from "./finder";
 import Product from "../models/product";
 
-function setUp() {
+function setUp(name) {
   let mockProduct = new Product(
     "PL1000",
     "Test-name",
@@ -16,7 +16,7 @@ function setUp() {
 
 describe("Product finder Test", () => {
   test("return product when product is exists", () => {
-    let mockDataSource = setUp();
+    let mockDataSource = setUp("Test-name");
     let finder = new ProductFinder(mockDataSource);
     let result = finder.getProduct("PL1000");
     expect(result).toBeInstanceOf(Product);
