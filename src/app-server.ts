@@ -1,19 +1,29 @@
 const express = require("express");
+import ProductFinder from "./services/finder";
+
 const app = express();
 const port = 4000;
+
+let productFinder = new ProductFinder();
+
+import Product from "./models/product";
 
 app.use(express.static("public"));
 
 const Main = (request, response) => {
-  response.sendfile("src/views/index.html");
+  response.render("index", {
+    title: "Testing Pug",
+    message: "Coverts to html",
+  });
 };
 
-const gallery = (request, response) => {
-  response.sendfile("src/views/gallery.html");
-};
+app.get("/search/:product", (request, response) => {
+  response.send(productFinder.findProduct(request.params.product));
+});
 
 app.get("/", Main);
-app.get("/gallery/", gallery);
+
+app.set("view engine", "pug");
 
 app.get("/mirror/:word", (request, response) => {
   response.send(request.parms.word);
