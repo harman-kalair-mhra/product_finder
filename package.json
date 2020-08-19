@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "copy-views": "copyfiles -f \"src/views/*.pug\" out/views",
-    "dev": "npm run copy-views && npm run watch && nodemon out/app-server.js",
+    "dev": "npm run copy-views && npm run watch & nodemon out/app-server.js",
     "test": "jest",
     "watch": "tsc --watch"
   },
@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "jest": "^26.3.0",
+    "nodemon": "^2.0.4",
     "ts-jest": "^26.2.0",
     "typescript": "^3.9.7"
   },
