@@ -3,7 +3,8 @@
     "target": "ES3",
     "module": "commonjs",
     "sourceMap": true,
-    "outDir": "./out"
+    "outDir": "./out",
+    "esModuleInterop": true
   },
   "include": ["src/**/*"],
   "exclude": ["src/**/*.test.*"]

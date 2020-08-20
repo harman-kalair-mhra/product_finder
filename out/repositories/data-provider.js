@@ -1,6 +1,9 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 exports.__esModule = true;
-var product_1 = require("../models/product");
+var product_1 = __importDefault(require("../models/product"));
 function getData() {
     var itemNames = ["PL123456", "PL513872", "PL999999", "PL654321", "PL818181"];
     var product1 = new product_1["default"]("PL123456", "name", "dose", "substance", "url");

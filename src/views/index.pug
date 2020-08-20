@@ -1,6 +1,11 @@
 html
   head
-    title = title
+    title
   body
     h1
       | Product Finder
+    form(action='/search', method='POST')
+      label(for="products")
+        | Search your Product: 
+      input(type="text", id="products", name="products")
+      input(type="submit", value="Submit")
