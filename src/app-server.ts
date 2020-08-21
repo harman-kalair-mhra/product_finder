@@ -4,7 +4,7 @@ import ProductFinder from "./services/finder";
 import getData from "./repositories/data-provider";
 
 const app = express();
-const port = 4000;
+const port = 5000;
 
 app.use(
   express.urlencoded({
@@ -21,9 +21,14 @@ const Main = (request, response) => {
 };
 
 app.post("/search", (request: Request, response: Response) => {
-  let searchedProduct = productFinder.getProduct(request.body.products);
+  let searchedProduct = productFinder.getProduct(
+    request.body.products.toUpperCase()
+  );
   if (searchedProduct) {
-    response.send(searchedProduct);
+    response.render("description", {
+      title: "Product Description",
+      item: searchedProduct,
+    });
   } else {
     response.send("Product Not Found");
   }

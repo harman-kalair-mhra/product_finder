@@ -1,0 +1,20 @@
+body {
+  background-color: lightblue;
+  text-align: center;
+}
+h1 {
+  color: white;
+}
+form {
+  display: inline-block;
+}
+.product-properties {
+  font-family: Verdana;
+  font-size: 20px;
+}
+.header3 {
+  color: green;
+}
+label {
+  font-style: italic;
+}

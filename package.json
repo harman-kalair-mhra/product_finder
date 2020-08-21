@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
+    "copy-styles": "copyfiles -f \"src/styles/*.css\" public/styles",
     "copy-views": "copyfiles -f \"src/views/*.pug\" out/views",
-    "dev": "npm run copy-views && npm run watch & nodemon out/app-server.js",
+    "dev": "npm run copy-styles && npm run copy-views && npm run watch & nodemon out/app-server.js",
     "test": "jest",
     "watch": "tsc --watch"
   },

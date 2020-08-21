@@ -1,0 +1,13 @@
+html
+  head
+    link(rel="stylesheet" type="text/css" href="/styles/style.css")
+    title
+  body
+    h1
+      | Description of the Product
+    h3(class="header3") #{item.plNumber}
+    p(class="product-properties") Product Name: #{item.name}
+    p(class="product-properties") Dose: #{item.dose}
+    p(class="product-properties") Substance: #{item.substance}
+    a(href=item.url)
+      | URL Link

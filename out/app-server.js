@@ -7,7 +7,7 @@ var express_1 = __importDefault(require("express"));
 var finder_1 = __importDefault(require("./services/finder"));
 var data_provider_1 = __importDefault(require("./repositories/data-provider"));
 var app = express_1["default"]();
-var port = 4000;
+var port = 5000;
 app.use(express_1["default"].urlencoded({
     extended: true
 }));
@@ -17,9 +17,12 @@ var Main = function (request, response) {
     response.render("index");
 };
 app.post("/search", function (request, response) {
-    var searchedProduct = productFinder.getProduct(request.body.products);
+    var searchedProduct = productFinder.getProduct(request.body.products.toUpperCase());
     if (searchedProduct) {
-        response.send(searchedProduct);
+        response.render("description", {
+            title: "Product Description",
+            item: searchedProduct
+        });
     }
     else {
         response.send("Product Not Found");
