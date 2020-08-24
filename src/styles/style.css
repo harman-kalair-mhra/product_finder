@@ -3,13 +3,26 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  min-height: 100vh;
   text-align: center;
 }
 h1 {
   color: black;
   font-weight: bolder;
   font-size: 50;
+  background-color: black;
+  color: white;
+  border-radius: 25px;
 }
+.header2 {
+  color: red;
+  text-decoration: underline;
+}
+.Welcome {
+  font-size: 15px;
+  text-align: center;
+}
+
 .textbox {
   height: 50px;
   width: 500px;
@@ -26,25 +39,33 @@ h1 {
   padding: 15px 30px;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 6x;
   cursor: pointer;
   border-radius: 70px;
   border: 2px solid white;
   padding: 16px;
 }
-.product-properties {
+div.product-properties {
+  display: inline;
+  padding: 5px;
+  border: 10px;
+  background-color: red;
   font-family: Verdana;
   font-size: 20px;
   align-items: center;
 }
-.header3 {
-  color: red;
-  text-decoration: underline;
-}
+
 label {
   font-style: italic;
 }
 
 .url {
   font-size: medium;
+}
+div.product-properties {
+  background-color: lightgrey;
+  width: 500px;
+  border: 3px solid black;
+  padding: 50px;
+  margin: 20px;
 }

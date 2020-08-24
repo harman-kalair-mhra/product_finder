@@ -5,9 +5,9 @@ html
   body
     h1
       | Description of the Product
-    h3(class="header3") #{item.plNumber}
-    p(class="product-properties") Product Name: #{item.name}
-    p(class="product-properties") Dose: #{item.dose}
-    p(class="product-properties") Substance: #{item.substance}
+    h2(class="header2") #{item.plNumber}
+    div(class="product-properties") Product Name: #{item.name}
+    div(class="product-properties") Dose: #{item.dose}
+    div(class="product-properties") Substance: #{item.substance}
     a(href=item.url, class= "url") 
       | CLICK FOR INFORMATION
