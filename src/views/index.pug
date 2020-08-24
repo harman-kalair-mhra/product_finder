@@ -5,8 +5,6 @@ html
   body
     h1
       | Product Finder
-    form(action='/search', method='POST')
-      label(for="products")
-        | Search your Product: 
-      input(type="text", id="products", name="products")
-      input(type="submit", value="Submit")
+    form(action='/search', method='POST', class= "classform")
+      input(type="text", id="products", name="products", placeholder= "ENTER YOUR PRODUCT", class= "textbox")
+      input(type="submit", value="SEARCH", class= "submitbutton")

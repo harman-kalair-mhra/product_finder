@@ -1,6 +1,12 @@
 import Product from "../models/product";
 export default function getData() {
-  let itemNames = ["PL123456", "PL513872", "PL999999", "PL654321", "PL818181"];
+  let itemNames = [
+    "PL001730050",
+    "PL001655013",
+    "PL136060206",
+    "PL252980158",
+    "PL201170079",
+  ];
   const product1 = new Product(
     "PL001730050",
     "Ibugel gel",
