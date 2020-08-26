@@ -43,16 +43,21 @@ h1 {
   cursor: pointer;
   border-radius: 70px;
   border: 2px solid white;
-  padding: 16px;
+  padding: 15px;
 }
-div.product-properties {
-  display: inline;
+.product-properties {
   padding: 5px;
   border: 10px;
   background-color: red;
   font-family: Verdana;
   font-size: 20px;
   align-items: center;
+}
+.box {
+  display: inline-block;
+  padding: 5px;
+  border: 10px;
+  background-color: red;
 }
 
 label {

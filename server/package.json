@@ -11,7 +11,7 @@
     "test": "jest",
     "watch": "tsc --watch"
   },
-  "author": "",
+  "author": "harmankalair",
   "license": "ISC",
   "dependencies": {
     "@types/jest": "^26.0.9",
