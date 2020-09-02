@@ -1,10 +1,10 @@
-import express, { Request, Response } from "express";
+import express, { Request, Response, request } from "express";
 import bodyParser from "body-parser";
 import ProductFinder from "./services/finder";
 import getData from "./repositories/data-provider";
 
 const app = express();
-const port = 5000;
+const port = 3000;
 
 app.use(
   express.urlencoded({
@@ -19,6 +19,11 @@ app.use(express.static("public"));
 const Main = (request, response) => {
   response.render("index");
 };
+
+app.get("/hello", (request: Request, response: Response) => {
+  response.setHeader("Content-Type", "application/json");
+  response.send({ "Hello there": "This is test" });
+});
 
 app.post("/search", (request: Request, response: Response) => {
   let searchedProduct = productFinder.getProduct(
