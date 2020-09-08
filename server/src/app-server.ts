@@ -3,6 +3,8 @@ import bodyParser from "body-parser";
 import ProductFinder from "./services/finder";
 import getData from "./repositories/data-provider";
 
+import models, { connectDb } from "./models";
+
 const app = express();
 const port = 3000;
 
@@ -48,6 +50,16 @@ app.get("/mirror/:word", (request, response) => {
   response.send(request.params.word);
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+connectDb().then(async () => {
+  app.listen(port, () => {
+    console.log("Example app listening at http://localhost:${port}");
+  });
 });
+
+const createItems = async () => {
+  const item1 = new models.Item({
+    name: "PL123456",
+  });
+
+  await item1.save();
+};
