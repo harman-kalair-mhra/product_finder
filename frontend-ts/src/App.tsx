@@ -4,29 +4,18 @@ import "./App.css";
 import Header from "./components/Header/index";
 import ProductSearch from "./components/ProductSearch/index";
 import ProductSelect from "./components/ProductSelect/index";
+import IProduct from "./models/product";
 
 function App() {
-  let [basket, setBasket] = useState<string[]>([]);
-
-  const updateBasket = (product: string) => {
-    basket.push(product);
-    setBasket(basket);
-  };
+  let [product, setproduct] = useState<IProduct[]>([]);
 
   useEffect(() => {
-    fetch("/hello")
+    fetch("/products")
       .then((response) => response.json())
-      .then((response) => console.log(response));
-  });
+      .then((response) => setproduct(response));
+  }, []);
 
-  return (
-    <div className="App">
-      <ProductSelect name="Paracetamol" onSubmit={updateBasket} />
-      <ProductSelect name="Nabilone" onSubmit={updateBasket} />
-      <ProductSelect name="Ramipril" onSubmit={updateBasket} />
-      <ProductSelect name="Ibugel gel" onSubmit={updateBasket} />
-    </div>
-  );
+  return <div className="App"></div>;
 }
 
 export default App;

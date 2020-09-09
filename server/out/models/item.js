@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 exports.__esModule = true;
 var mongoose_1 = __importDefault(require("mongoose"));
 var itemSchema = new mongoose_1["default"].Schema({
-    name: {
+    plNumber: {
         type: String,
         unique: false,
         required: true

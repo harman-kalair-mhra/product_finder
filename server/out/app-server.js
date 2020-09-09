@@ -1,23 +1,4 @@
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -61,17 +42,22 @@ exports.__esModule = true;
 var express_1 = __importDefault(require("express"));
 var finder_1 = __importDefault(require("./services/finder"));
 var data_provider_1 = __importDefault(require("./repositories/data-provider"));
-var models_1 = __importStar(require("./models"));
+var models_1 = require("./models");
 var app = express_1["default"]();
 var port = 3000;
 app.use(express_1["default"].urlencoded({
     extended: true
 }));
-var productFinder = new finder_1["default"](data_provider_1["default"]);
+var productFinder;
 app.use(express_1["default"].static("public"));
-var Main = function (request, response) {
-    response.render("index");
+var main = function (request, response) {
+    response.setHeader("Content-Type", "application/json");
+    response.send(productFinder.itemNames);
 };
+// app.get("/", (request, response) => {
+//   response.setHeader("Content-Type", "application/json");
+//   response.send(productFinder);
+// });
 app.get("/hello", function (request, response) {
     response.setHeader("Content-Type", "application/json");
     response.send({ "Hello there": "This is test" });
@@ -88,7 +74,7 @@ app.post("/search", function (request, response) {
         response.send("Product Not Found");
     }
 });
-app.get("/", Main);
+app.get("/products", main);
 app.set("view engine", "pug");
 app.set("views", "./out/views");
 app.get("/mirror/:word", function (request, response) {
@@ -96,26 +82,18 @@ app.get("/mirror/:word", function (request, response) {
 });
 models_1.connectDb().then(function () { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
-        createItems();
+        // createItems();
+        productFinder = new finder_1["default"](data_provider_1["default"]());
         app.listen(port, function () {
-            console.log("Example app listening at http://localhost:${port}");
+            console.log("Example app listening at http://localhost:" + port);
         });
         return [2 /*return*/];
     });
 }); });
-var createItems = function () { return __awaiter(void 0, void 0, void 0, function () {
-    var item1;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                item1 = new models_1["default"].Item({
-                    name: "PL123456"
-                });
-                return [4 /*yield*/, item1.save()];
-            case 1:
-                _a.sent();
-                return [2 /*return*/];
-        }
-    });
-}); };
+// const createItems = async () => {
+//   const item1 = new models.Item({
+//     plNumber: "PL123456",
+//   });
+//   await item1.save();
+// };
 //# sourceMappingURL=app-server.js.map

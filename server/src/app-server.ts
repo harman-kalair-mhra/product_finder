@@ -14,13 +14,19 @@ app.use(
   })
 );
 
-let productFinder = new ProductFinder(getData);
+let productFinder;
 
 app.use(express.static("public"));
 
-const Main = (request, response) => {
-  response.render("index");
+const main = (request, response) => {
+  response.setHeader("Content-Type", "application/json");
+  response.send(productFinder.itemNames);
 };
+
+// app.get("/", (request, response) => {
+//   response.setHeader("Content-Type", "application/json");
+//   response.send(productFinder);
+// });
 
 app.get("/hello", (request: Request, response: Response) => {
   response.setHeader("Content-Type", "application/json");
@@ -41,7 +47,7 @@ app.post("/search", (request: Request, response: Response) => {
   }
 });
 
-app.get("/", Main);
+app.get("/products", main);
 
 app.set("view engine", "pug");
 app.set("views", "./out/views");
@@ -51,16 +57,19 @@ app.get("/mirror/:word", (request, response) => {
 });
 
 connectDb().then(async () => {
-  createItems();
+  // createItems();
+
+  productFinder = new ProductFinder(getData());
+
   app.listen(port, () => {
-    console.log("Example app listening at http://localhost:${port}");
+    console.log(`Example app listening at http://localhost:${port}`);
   });
 });
 
-const createItems = async () => {
-  const item1 = new models.Item({
-    name: "PL123456",
-  });
+// const createItems = async () => {
+//   const item1 = new models.Item({
+//     plNumber: "PL123456",
+//   });
 
-  await item1.save();
-};
+//   await item1.save();
+// };

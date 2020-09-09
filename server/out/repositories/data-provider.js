@@ -12,12 +12,47 @@ function getData() {
         "PL252980158",
         "PL201170079",
     ];
-    var product1 = new product_1["default"]("PL001730050", "Ibugel gel", "10mg", "Ibuprofen", "https://mhraproductsproduction.blob.core.windows.net/docs/54454db7a69e9153ab7302232cdb8ee9230579ca");
-    var product2 = new product_1["default"]("PL001655013", "Anadin Extra", "5mg", "Paracetamol", "https://mhraproductsproduction.blob.core.windows.net/docs/10c02830183326751553be62be5e2564fb47e970");
-    var product3 = new product_1["default"]("PL136060206", "Tadalafil 10mg film-coated tablets", "10mg", "Tadafil", "https://mhraproductsproduction.blob.core.windows.net/docs/a1744b861fbda647f286cc70865d30cf2673c077");
-    var product4 = new product_1["default"]("PL252980158", "Nabilone 1mg capsules", "1mg", "Nabilone", "https://mhraproductsproduction.blob.core.windows.net/docs/b68e1e028e44806a00a65d016aec4f1c90436ac4");
-    var product5 = new product_1["default"]("PL201170079", "Ramipril 2.5mg tablets ", "2.5mg", "Ramipril", "https://mhraproductsproduction.blob.core.windows.net/docs/bdc8d29cd2957f0ffdd230f6f47a5d9cf5b3f039");
-    var products = [product1, product2, product3, product4, product5];
+    var product1 = new product_1["default"]({
+        plNumber: "PL001730050",
+        name: "Ibugel gel",
+        dose: "10mg",
+        substance: "Ibuprofen",
+        url: "https://mhraproductsproduction.blob.core.windows.net/docs/54454db7a69e9153ab7302232cdb8ee9230579ca"
+    });
+    product1.save();
+    var product2 = new product_1["default"]({
+        plNumber: "PL001655013",
+        name: "Anadin Extra",
+        dose: "5mg",
+        substance: "Paracetamol",
+        url: "https://mhraproductsproduction.blob.core.windows.net/docs/10c02830183326751553be62be5e2564fb47e970"
+    });
+    product2.save();
+    var product3 = new product_1["default"]({
+        plNumber: "PL136060206",
+        name: "Tadalafil 10mg film-coated tablets",
+        dose: "10mg",
+        substance: "Tadafil",
+        url: "https://mhraproductsproduction.blob.core.windows.net/docs/a1744b861fbda647f286cc70865d30cf2673c077"
+    });
+    product3.save();
+    var product4 = new product_1["default"]({
+        plNumber: "PL252980158",
+        name: "Nabilone 1mg capsules",
+        dose: "1mg",
+        substance: "Nabilone",
+        url: "https://mhraproductsproduction.blob.core.windows.net/docs/b68e1e028e44806a00a65d016aec4f1c90436ac4"
+    });
+    product4.save();
+    var product5 = new product_1["default"]({
+        plNumber: "PL201170079",
+        name: "Ramipril 2.5mg tablets ",
+        dose: "2.5mg",
+        substance: "Ramipril",
+        url: "https://mhraproductsproduction.blob.core.windows.net/docs/bdc8d29cd2957f0ffdd230f6f47a5d9cf5b3f039"
+    });
+    product5.save();
+    var products = [];
     var productObjects = {};
     for (var i = 0; i < products.length; i++) {
         var Product_1 = products[i];
