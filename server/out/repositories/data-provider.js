@@ -19,7 +19,7 @@ function getData() {
         substance: "Ibuprofen",
         url: "https://mhraproductsproduction.blob.core.windows.net/docs/54454db7a69e9153ab7302232cdb8ee9230579ca"
     });
-    product1.save();
+    // product1.save();
     var product2 = new product_1["default"]({
         plNumber: "PL001655013",
         name: "Anadin Extra",
@@ -27,7 +27,7 @@ function getData() {
         substance: "Paracetamol",
         url: "https://mhraproductsproduction.blob.core.windows.net/docs/10c02830183326751553be62be5e2564fb47e970"
     });
-    product2.save();
+    // product2.save();
     var product3 = new product_1["default"]({
         plNumber: "PL136060206",
         name: "Tadalafil 10mg film-coated tablets",
@@ -35,7 +35,7 @@ function getData() {
         substance: "Tadafil",
         url: "https://mhraproductsproduction.blob.core.windows.net/docs/a1744b861fbda647f286cc70865d30cf2673c077"
     });
-    product3.save();
+    // product3.save();
     var product4 = new product_1["default"]({
         plNumber: "PL252980158",
         name: "Nabilone 1mg capsules",
@@ -43,7 +43,7 @@ function getData() {
         substance: "Nabilone",
         url: "https://mhraproductsproduction.blob.core.windows.net/docs/b68e1e028e44806a00a65d016aec4f1c90436ac4"
     });
-    product4.save();
+    // product4.save();
     var product5 = new product_1["default"]({
         plNumber: "PL201170079",
         name: "Ramipril 2.5mg tablets ",
@@ -51,7 +51,7 @@ function getData() {
         substance: "Ramipril",
         url: "https://mhraproductsproduction.blob.core.windows.net/docs/bdc8d29cd2957f0ffdd230f6f47a5d9cf5b3f039"
     });
-    product5.save();
+    // product5.save();
     var products = [];
     var productObjects = {};
     for (var i = 0; i < products.length; i++) {
