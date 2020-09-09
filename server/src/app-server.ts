@@ -51,6 +51,7 @@ app.get("/mirror/:word", (request, response) => {
 });
 
 connectDb().then(async () => {
+  createItems();
   app.listen(port, () => {
     console.log("Example app listening at http://localhost:${port}");
   });

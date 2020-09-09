@@ -96,6 +96,7 @@ app.get("/mirror/:word", function (request, response) {
 });
 models_1.connectDb().then(function () { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
+        createItems();
         app.listen(port, function () {
             console.log("Example app listening at http://localhost:${port}");
         });
