@@ -5,6 +5,7 @@ import Header from "./components/Header/index";
 import ProductSearch from "./components/ProductSearch/index";
 import ProductSelect from "./components/ProductSelect/index";
 import IProduct from "./models/product";
+import ProductItem from "./components/ProductItem";
 
 function App() {
   let [product, setproduct] = useState<IProduct[]>([]);
@@ -15,7 +16,13 @@ function App() {
       .then((response) => setproduct(response));
   }, []);
 
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      {product.map((productItem) => {
+        return <ProductItem item={productItem} />;
+      })}
+    </div>
+  );
 }
 
 export default App;

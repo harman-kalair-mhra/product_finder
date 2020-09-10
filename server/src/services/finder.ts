@@ -7,6 +7,7 @@ export default class ProductFinder {
   itemNames: IProduct[];
   constructor(dataSource) {
     this.dataSource = dataSource;
+
     models.Product.find({}, (err, productItems) => {
       console.log(productItems);
       this.itemNames = productItems;
