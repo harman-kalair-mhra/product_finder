@@ -2,8 +2,10 @@ import express, { Request, Response, request } from "express";
 import bodyParser from "body-parser";
 import ProductFinder from "./services/finder";
 import getData from "./repositories/data-provider";
+import orderService from "./services/order-service";
 
 import models, { connectDb } from "./models";
+import OrderService from "./services/order-service";
 
 const app = express();
 const port = 3000;
@@ -18,15 +20,21 @@ let productFinder;
 
 app.use(express.static("public"));
 
+app.use(bodyParser.json());
+
+app.use(bodyParser.urlencoded({ extended: true }));
+
 const main = (request, response) => {
   response.setHeader("Content-Type", "application/json");
   response.send(productFinder.itemNames);
 };
 
-// app.get("/", (request, response) => {
-//   response.setHeader("Content-Type", "application/json");
-//   response.send(productFinder);
-// });
+app.post("/order", (request, response) => {
+  const order = new OrderService();
+  order
+    .createOrder(request.body.customerId, request.body.name)
+    .then(() => response.sendStatus(201));
+});
 
 app.get("/hello", (request: Request, response: Response) => {
   response.setHeader("Content-Type", "application/json");

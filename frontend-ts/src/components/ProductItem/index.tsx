@@ -6,8 +6,9 @@ const StyledProductItem = styled.div`
   color: green;
   font-size: 13px;
   background-color: #f5f5dc;
-  border: 3px solid black;
-  align-items: center;
+  border-style: solid;
+  margin: 20px;
+  padding: 10px;
 `;
 
 interface IProductItem {
@@ -15,6 +16,20 @@ interface IProductItem {
 }
 
 const ProductItem: React.FC<IProductItem> = (props) => {
+  function handleclick() {
+    console.log("It's Working");
+    const requestOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: "Nabilone 1mg capsules",
+        customerId: "c9c5b059-4afd-4201-a478-5a36bd2fbc61",
+      }),
+    };
+    fetch("/order", requestOptions);
+  }
   return (
     <StyledProductItem>
       <p>PLNumber: {props.item.plNumber}</p>
@@ -22,6 +37,9 @@ const ProductItem: React.FC<IProductItem> = (props) => {
       <p>Dose: {props.item.dose}</p>
       <p>Substance: {props.item.substance}</p>
       <a href={props.item.url}>CLICK FOR INFORMATION</a>
+      <button type="button" onClick={handleclick}>
+        Select
+      </button>
     </StyledProductItem>
   );
 };

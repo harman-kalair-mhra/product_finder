@@ -39,67 +39,25 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 exports.__esModule = true;
-var express_1 = __importDefault(require("express"));
-var body_parser_1 = __importDefault(require("body-parser"));
-var finder_1 = __importDefault(require("./services/finder"));
-var data_provider_1 = __importDefault(require("./repositories/data-provider"));
-var models_1 = require("./models");
-var order_service_1 = __importDefault(require("./services/order-service"));
-var app = express_1["default"]();
-var port = 3000;
-app.use(express_1["default"].urlencoded({
-    extended: true
-}));
-var productFinder;
-app.use(express_1["default"].static("public"));
-app.use(body_parser_1["default"].json());
-app.use(body_parser_1["default"].urlencoded({ extended: true }));
-var main = function (request, response) {
-    response.setHeader("Content-Type", "application/json");
-    response.send(productFinder.itemNames);
-};
-app.post("/order", function (request, response) {
-    var order = new order_service_1["default"]();
-    order
-        .createOrder(request.body.customerId, request.body.name)
-        .then(function () { return response.sendStatus(201); });
-});
-app.get("/hello", function (request, response) {
-    response.setHeader("Content-Type", "application/json");
-    response.send({ "Hello there": "This is test" });
-});
-app.post("/search", function (request, response) {
-    var searchedProduct = productFinder.getProduct(request.body.products.toUpperCase());
-    if (searchedProduct) {
-        response.render("description", {
-            title: "Product Description",
-            item: searchedProduct
-        });
+var guid_1 = __importDefault(require("guid"));
+var order_1 = __importDefault(require("../models/order"));
+var OrderService = /** @class */ (function () {
+    function OrderService() {
     }
-    else {
-        response.send("Product Not Found");
-    }
-});
-app.get("/products", main);
-app.set("view engine", "pug");
-app.set("views", "./out/views");
-app.get("/mirror/:word", function (request, response) {
-    response.send(request.params.word);
-});
-models_1.connectDb().then(function () { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        // createItems();
-        productFinder = new finder_1["default"](data_provider_1["default"]());
-        app.listen(port, function () {
-            console.log("Example app listening at http://localhost:" + port);
+    OrderService.prototype.createOrder = function (customerId, customerOrder) {
+        return __awaiter(this, void 0, void 0, function () {
+            var order;
+            return __generator(this, function (_a) {
+                order = new order_1["default"]({
+                    name: customerOrder,
+                    customerId: customerId,
+                    orderId: guid_1["default"].raw()
+                });
+                return [2 /*return*/, order.save()];
+            });
         });
-        return [2 /*return*/];
-    });
-}); });
-// const createItems = async () => {
-//   const item1 = new models.Item({
-//     plNumber: "PL123456",
-//   });
-//   await item1.save();
-// };
-//# sourceMappingURL=app-server.js.map
+    };
+    return OrderService;
+}());
+exports["default"] = OrderService;
+//# sourceMappingURL=order-service.js.map
