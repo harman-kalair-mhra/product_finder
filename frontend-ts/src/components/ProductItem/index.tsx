@@ -4,8 +4,9 @@ import styled from "styled-components";
 
 const StyledProductItem = styled.div`
   color: green;
-  font-size: 13px;
+  font-size: 18px;
   background-color: #f5f5dc;
+  font-weight: 900
   border-style: solid;
   margin: 20px;
   padding: 10px;
