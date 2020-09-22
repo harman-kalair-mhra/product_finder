@@ -25,7 +25,10 @@ const ProductItem: React.FC<IProductItem> = (props) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        name: "Nabilone 1mg capsules",
+        plNumber: props.item.plNumber,
+        name: props.item.name,
+        dose: props.item.dose,
+        substance: props.item.substance,
         customerId: "c9c5b059-4afd-4201-a478-5a36bd2fbc61",
       }),
     };

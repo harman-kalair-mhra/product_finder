@@ -6,7 +6,22 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 exports.__esModule = true;
 var mongoose_1 = __importDefault(require("mongoose"));
 var orderSchema = new mongoose_1["default"].Schema({
+    plNumber: {
+        type: String,
+        unique: false,
+        required: true
+    },
     name: {
+        type: String,
+        unique: false,
+        required: true
+    },
+    dose: {
+        type: String,
+        unique: false,
+        required: true
+    },
+    substance: {
         type: String,
         unique: false,
         required: true

@@ -44,12 +44,15 @@ var order_1 = __importDefault(require("../models/order"));
 var OrderService = /** @class */ (function () {
     function OrderService() {
     }
-    OrderService.prototype.createOrder = function (customerId, customerOrder) {
+    OrderService.prototype.createOrder = function (customerId, customerOrder, customerPl, customerDose, customerSub) {
         return __awaiter(this, void 0, void 0, function () {
             var order;
             return __generator(this, function (_a) {
                 order = new order_1["default"]({
+                    plNumber: customerPl,
                     name: customerOrder,
+                    dose: customerDose,
+                    substance: customerSub,
                     customerId: customerId,
                     orderId: guid_1["default"].raw()
                 });

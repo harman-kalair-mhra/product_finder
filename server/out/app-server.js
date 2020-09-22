@@ -61,7 +61,7 @@ var main = function (request, response) {
 app.post("/order", function (request, response) {
     var order = new order_service_1["default"]();
     order
-        .createOrder(request.body.customerId, request.body.name)
+        .createOrder(request.body.customerId, request.body.name, request.body.plNumber, request.body.dose, request.body.substance)
         .then(function () { return response.sendStatus(201); });
 });
 app.get("/hello", function (request, response) {

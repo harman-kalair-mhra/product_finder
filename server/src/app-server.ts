@@ -32,7 +32,13 @@ const main = (request, response) => {
 app.post("/order", (request, response) => {
   const order = new OrderService();
   order
-    .createOrder(request.body.customerId, request.body.name)
+    .createOrder(
+      request.body.customerId,
+      request.body.name,
+      request.body.plNumber,
+      request.body.dose,
+      request.body.substance
+    )
     .then(() => response.sendStatus(201));
 });
 
