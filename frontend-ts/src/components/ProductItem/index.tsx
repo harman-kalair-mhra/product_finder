@@ -12,6 +12,21 @@ const StyledProductItem = styled.div`
   padding: 10px;
 `;
 
+const Styledbutton = styled.button`
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);9);
+  border-radius: 8px
+`;
+
 interface IProductItem {
   item: IProduct;
 }
@@ -41,9 +56,10 @@ const ProductItem: React.FC<IProductItem> = (props) => {
       <p>Dose: {props.item.dose}</p>
       <p>Substance: {props.item.substance}</p>
       <a href={props.item.url}>CLICK FOR INFORMATION</a>
-      <button type="button" onClick={handleclick}>
+      <br />
+      <Styledbutton type="button" onClick={handleclick}>
         Select
-      </button>
+      </Styledbutton>
     </StyledProductItem>
   );
 };
