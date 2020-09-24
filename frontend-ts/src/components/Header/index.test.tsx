@@ -1,15 +1,15 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
 
-import ProductSearch from "./index";
+import Header from "./index";
 
-describe("Product Search", () => {
+describe("Header", () => {
   it("renders shallow", () => {
-    const component = shallow(<ProductSearch />);
+    const component = shallow(<Header agency="MHRA"></Header>);
     expect(component).toMatchSnapshot();
   }),
     it("renders mount", () => {
-      const component = mount(<ProductSearch />);
+      const component = mount(<Header agency="MHRA"></Header>);
       expect(component).toMatchSnapshot();
     });
 });

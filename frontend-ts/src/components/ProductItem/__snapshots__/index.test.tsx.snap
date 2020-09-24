@@ -1,0 +1,177 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product Item renders mount 1`] = `
+<ProductItem
+  item={
+    Object {
+      "dose": "500mg",
+      "name": "Paracetamol",
+      "plNumber": "PL123456",
+      "substance": "Paracetamol",
+      "url": "www.drug.com",
+    }
+  }
+>
+  <styled.div>
+    <div
+      className="sc-AxjAm cJxcDN"
+    >
+      <p>
+        PLNumber: 
+        PL123456
+      </p>
+      <p>
+        Name: 
+        Paracetamol
+      </p>
+      <p>
+        Dose: 
+        500mg
+      </p>
+      <p>
+        Substance: 
+        Paracetamol
+      </p>
+      <a
+        href="www.drug.com"
+      >
+        CLICK FOR INFORMATION
+      </a>
+      <br />
+      <styled.button
+        onClick={[Function]}
+        type="button"
+      >
+        <button
+          className="sc-AxirZ khuxrF"
+          onClick={[Function]}
+          type="button"
+        >
+          Select
+        </button>
+      </styled.button>
+    </div>
+  </styled.div>
+</ProductItem>
+`;
+
+exports[`Product Item renders shallow 1`] = `
+<styled.div>
+  <p>
+    PLNumber: 
+    PL123456
+  </p>
+  <p>
+    Name: 
+    Paracetamol
+  </p>
+  <p>
+    Dose: 
+    500mg
+  </p>
+  <p>
+    Substance: 
+    Paracetamol
+  </p>
+  <a
+    href="www.drug.com"
+  >
+    CLICK FOR INFORMATION
+  </a>
+  <br />
+  <styled.button
+    onClick={[Function]}
+    type="button"
+  >
+    Select
+  </styled.button>
+</styled.div>
+`;
+
+exports[`Product Select renders mount 1`] = `
+<ProductItem
+  item={
+    Object {
+      "dose": "500mg",
+      "name": "Paracetamol",
+      "plNumber": "PL123456",
+      "substance": "Paracetamol",
+      "url": "www.drug.com",
+    }
+  }
+>
+  <styled.div>
+    <div
+      className="sc-AxjAm cJxcDN"
+    >
+      <p>
+        PLNumber: 
+        PL123456
+      </p>
+      <p>
+        Name: 
+        Paracetamol
+      </p>
+      <p>
+        Dose: 
+        500mg
+      </p>
+      <p>
+        Substance: 
+        Paracetamol
+      </p>
+      <a
+        href="www.drug.com"
+      >
+        CLICK FOR INFORMATION
+      </a>
+      <br />
+      <styled.button
+        onClick={[Function]}
+        type="button"
+      >
+        <button
+          className="sc-AxirZ khuxrF"
+          onClick={[Function]}
+          type="button"
+        >
+          Select
+        </button>
+      </styled.button>
+    </div>
+  </styled.div>
+</ProductItem>
+`;
+
+exports[`Product Select renders shallow 1`] = `
+<styled.div>
+  <p>
+    PLNumber: 
+    PL123456
+  </p>
+  <p>
+    Name: 
+    Paracetamol
+  </p>
+  <p>
+    Dose: 
+    500mg
+  </p>
+  <p>
+    Substance: 
+    Paracetamol
+  </p>
+  <a
+    href="www.drug.com"
+  >
+    CLICK FOR INFORMATION
+  </a>
+  <br />
+  <styled.button
+    onClick={[Function]}
+    type="button"
+  >
+    Select
+  </styled.button>
+</styled.div>
+`;

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders mount 1`] = `
+<Header
+  agency="MHRA"
+>
+  <styled.h1>
+    <h1
+      className="sc-AxjAm bwvbkn"
+    >
+      Product Finder 
+      MHRA
+    </h1>
+  </styled.h1>
+</Header>
+`;
+
+exports[`Header renders shallow 1`] = `
+<styled.h1>
+  Product Finder 
+  MHRA
+</styled.h1>
+`;
