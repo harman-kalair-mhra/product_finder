@@ -1,0 +1,27 @@
+[
+  {
+    "_id": "5f59057f464be61c069fc512",
+    "plNumber": "PL123456",
+    "name": "Paracetamol",
+    "dose": "500mg",
+    "substance": "Paracetamol",
+    "url": "www.url.com"
+  },
+  {
+    "_id": "5f59057f464be61c069fc514",
+    "plNumber": "PL234567",
+    "name": "Sodium",
+    "dose": "200mg",
+    "substance": "Sodium",
+    "url": "www.url.com"
+  },
+
+  {
+    "_id": "5f59057f464be61c069fc513",
+    "plNumber": "PL345678",
+    "name": "Anadin Extra",
+    "dose": "5mg",
+    "substance": "Paracetamol",
+    "url": "www.url.com"
+  }
+]
