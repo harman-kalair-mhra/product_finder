@@ -18,6 +18,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
       {product.map((productItem) => {
         return <ProductItem item={productItem} />;
       })}
