@@ -8,7 +8,7 @@ const StyledProductItem = styled.div`
   background-color: #f5f5dc;
   font-weight: 900
   border-style: solid;
-  margin: 20px;
+  margin: 10px;
   padding: 10px;
 `;
 

@@ -31,6 +31,6 @@ describe("Writing first Test", () => {
     cy.server();
     cy.route("GET", "http://localhost:3001/products", "fixture:products.json");
     cy.visit("/");
-    cy.contains("ORDER NOW");
+    cy.contains("ORDER YOUR DRUGS HERE");
   });
 });
